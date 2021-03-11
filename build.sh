@@ -1,6 +1,6 @@
 export ARCH=arm64
 export SUBARCH=arm64
-export DTC_EXT=/home/disty/bin/dtc
+export DTC_EXT=dtc
 
 echo CLEAN OUT
 rm out -rf
