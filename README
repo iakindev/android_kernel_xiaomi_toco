@@ -1,29 +1,3 @@
-Based on phoenix-r-oss
-============
-Script used to compile the kernel:
-============
-
-export ARCH=arm64
-export SUBARCH=arm64
-export DTC_EXT=/home/disty/bin/dtc
-
-echo CLEAN OUT
-rm out -rf
-mkdir out
-
-echo DEFCONFIG
-make  O=out ARCH=arm64 toco_user_defconfig #$DEFCONFIG
-
-echo MENUCONFIG
-make O=out menuconfig
-
-PATH="/home/disty/Apps/android/android-clang/clang-bootstrap/bin:/home/disty/Apps/android/aarch64-linux-android-4.9/bin:${PATH}" \
-make -j$(nproc --all) O=out \
-                      ARCH=arm64 \
-                      CC=clang \
-                      CLANG_TRIPLE=aarch64-linux-gnu- \
-                      CROSS_COMPILE=aarch64-linux-android- | tee kernel.log
-
 ============
 Linux kernel
 ============
