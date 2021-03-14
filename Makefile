@@ -706,7 +706,12 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning, attribute-alias)
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS   += -Os
 else
-KBUILD_CFLAGS   += -O3
+KBUILD_CFLAGS   += -O3 -mllvm -polly \
+				   -mllvm -polly-run-inliner \
+				   -mllvm -polly-opt-fusion=max \
+				   -mllvm -polly-ast-use-context \
+				   -mllvm -polly-vectorizer=stripmine \
+				   -mllvm -polly-detect-keep-going
 endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
