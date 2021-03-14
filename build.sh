@@ -22,4 +22,5 @@ make -j$(nproc --all) O=out \
                       NM=llvm-nm \
                       OBJCOPY=llvm-objcopy \
                       OBJDUMP=llvm-objdump \
-                      STRIP=llvm-strip | tee kernel.log
+                      STRIP=llvm-strip \
+                      LD=ld.lld | tee kernel.log
