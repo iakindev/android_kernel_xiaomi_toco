@@ -6,7 +6,8 @@ export DTC_EXT=dtc
 export KBUILD_COMPILER_STRING="$($HOME/development/proton-clang/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 
 COMPRESSION="gz"
-OUT_ZIP="toco-experimentum-4-14-226"
+RELEASE="r1"
+OUT_ZIP="toco-experimentum-4-14-226-$RELEASE"
 THREAD_COUNT=$(($(nproc --all)-1)) # Keep minus 1 for responsive desktop experience while building on relatively old systems.
 
 echo --CLEAN OUT
