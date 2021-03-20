@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=toco-experimentum-4.14.225
+kernel.string=toco-experimentum-4.14.226
 do.devicecheck=1
 do.modules=0
 do.systemless=1
